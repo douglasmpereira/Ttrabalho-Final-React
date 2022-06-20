@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const api = axios.create({
     baseURL: 'https://62abfe6dbd0e5d29af18c56d.mockapi.io/serratec/tere03/'
@@ -6,4 +6,4 @@ const api = axios.create({
     //headers: {"Authorization" : "TOKEN"}
 })
 
-export default api
+export default api;

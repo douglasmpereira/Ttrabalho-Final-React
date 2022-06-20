@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import api from "../service/api"
 
+
 const useAxiosGet = (endpoint) => {
     const [tasks, setTasks] = useState(null)
 
@@ -15,4 +16,4 @@ const useAxiosGet = (endpoint) => {
     return { tasks }
 }
 
-export default useAxiosGet
+export default useAxiosGet;
