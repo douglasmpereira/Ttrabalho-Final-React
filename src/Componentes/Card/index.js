@@ -3,7 +3,7 @@ const Card = ({produto, editarProduto, excluirProduto}) => {
 
     return(
         <div className="container">
-            <div className="card col-12 mb-2">
+            <div className="card col-12 mb-2 mt-4">
                 <div className="card-header d-flex align-items-center">
                     <p>{produto.id} - {produto.nomeProduto}</p>
                 </div>
