@@ -1,0 +1,25 @@
+.footer{
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(85, 202, 221, 1) 0%, rgba(31, 138, 182, 1) 28%, rgba(11, 150, 186, 1) 60%, rgba(55, 86, 175, 1) 89%);
+    color: black;
+    align-items: center;
+    margin-inline-start: 0%;
+    margin-block-end: 0%;
+}
+.head{
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(85, 202, 221, 1) 0%, rgba(31, 138, 182, 1) 28%, rgba(11, 150, 186, 1) 60%, rgba(55, 86, 175, 1) 89%);
+    
+}
+.photo{
+    border-radius: 5%;
+}
+a{
+    color: black;
+    
+}
+a:hover{
+    color: lightcyan;
+}
+.iconeloja:hover{
+    color: lightcyan;
+}
+
