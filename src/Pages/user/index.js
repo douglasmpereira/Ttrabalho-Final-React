@@ -11,7 +11,7 @@ import Produto from "../../Componentes/Produto";
 const User = () => {
   return (
     <>
-      <div className="head">
+      <div className="header">
         <Navbar className="navbar ms-3">
           <Navbar.Brand href="#home">
             <FaStore className="iconeloja" size={30} />
@@ -29,9 +29,9 @@ const User = () => {
           <Produto />
         </div>
         <div className="container-fluid">
-          <div className="footer py-3 ">
+          <div className="footer py-3 fixed-bottom">
             <div className="row ">
-              <div className="col md-2 d-flex ms-5 t">
+              <div className="col d-flex ms-5 t">
                 <a href="">
                   <BsFacebook size={20} />
                 </a>
@@ -42,7 +42,7 @@ const User = () => {
                   <BsLinkedin size={20} />
                 </a>
               </div>
-              <div className="rodape col md-10 d-flex justify-content-end me-5">
+              <div className="rodape col d-flex justify-content-end me-5">
                 <a href="Esta com problemas? fale con">
                   Algum problema? fale conosco!
                 </a>
