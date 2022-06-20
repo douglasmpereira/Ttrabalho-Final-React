@@ -26,7 +26,7 @@ const Card = ({ produto, editarProduto, excluirProduto }) => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                         
+
                                             <td>{produto.categoria.nomeCategoria}</td>
                                             <td>{produto.descricaoProduto}</td>
                                             <td>{produto.custo}</td>
