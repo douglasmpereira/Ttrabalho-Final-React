@@ -1,6 +1,6 @@
 
 const CadastrarProdutos = ({ nome, setNome, custo, setCusto, preco, setPreco, descricao, setDescricao, quantidade, setQuantidade,
-     categoria, setCategoria, adicionarProduto}) => {
+    categoria, setCategoria, adicionarProduto, editando, edit, cancelar, salvar }) => {
 
     return (
         <div className="container">
@@ -12,7 +12,7 @@ const CadastrarProdutos = ({ nome, setNome, custo, setCusto, preco, setPreco, de
                 </div>
                 <div className="col-md-4">
                     <label className="form-label">Categoria</label>
-                    <input type="text" className="form-control" placeholder="Ex: Celulares" value={categoria} onChange={e => setCategoria(e.target.value)} />
+                    <input type="text" className="form-control" placeholder="Ex: Celulares" value={categoria.nomeCategoria} onChange={e => setCategoria({ "nomeCategoria": e.target.value })} />
                 </div>
                 <div className="col-md-4">
                     <label className="form-label">Descrição</label>
@@ -32,25 +32,18 @@ const CadastrarProdutos = ({ nome, setNome, custo, setCusto, preco, setPreco, de
                     <input type="number" className="form-control" placeholder="Ex: 25" value={quantidade} onChange={e => setQuantidade(e.target.value)} />
                 </div>
 
-                <div className="col-12 mt-4 mb-4">
-                    <button type="button" className="btn btn-success" onClick={adicionarProduto}  >
-                        <div className='d-flex align-items-center'>Adicionar</div>
-                    </button>
-                </div>
-
-                {/*<div className="col-12 mb-4">
-                    {editar.editando.edit ?
-                        <>
-                            <button type="button" className="btn btn-outline-warning me-2" onClick={cancelar}>Cancelar</button>
-                            <button type="button" className="btn btn-outline-success" onClick={salvar}>Salvar</button>
-                        </>
-                        :
-                        <button type="button" className="btn btn-outline-primary" onClick={adicionar}>
+                {editando.edit ?
+                    <div className="col-12 mt-4 mb-4">
+                        <button type="button" className="btn btn-danger me-2" onClick={cancelar}>Cancelar</button>
+                        <button type="button" className="btn btn-success" onClick={salvar}>Salvar</button>
+                    </div>
+                    :
+                    <div className="col-12 mt-4 mb-4">
+                        <button type="button" className="btn btn-success" onClick={adicionarProduto}  >
                             <div className='d-flex align-items-center'>Adicionar</div>
                         </button>
-                    }
-                </div>*/}
-
+                    </div>
+                }
 
             </form>
         </div>
