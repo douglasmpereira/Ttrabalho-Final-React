@@ -11,11 +11,11 @@ const Produto = () => {
     const [precoUnitario, setPrecoUnitario] = useState("")
     const [descricaoProduto, setDescricaoProduto] = useState("")
     const [quantidadeEstoque, setQuantidadeEstoque] = useState("")
-    const [categoria, setCategoria] = useState([{ idCategoria: 1, nome: "ttt" }])
+    const [categoria, setCategoria] = useState([{ nomeCategoria: "" }])
 
     const [idCount, setIdCount] = useState(0)
     const [editando, setEditando] = useState({ edit: false, id: null })
-    const { tasks } = useAxiosGet('/tasks')
+    const { tasks } = useAxiosGet('/produto')
     const [produtos, setProdutos] = useState([])
 
     useEffect(() => {
@@ -38,11 +38,11 @@ const Produto = () => {
             precoUnitario: precoUnitario,
             descricaoProduto: descricaoProduto,
             quantidadeEstoque: quantidadeEstoque,
-            categoria: categoria
+            categoria: categoria.nomeCategoria
 
         }
 
-        const { data } = await api.post('/tasks', novoProduto)
+        const { data } = await api.post('/produto', novoProduto)
 
         setProdutos([
             ...produtos,
@@ -55,7 +55,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ idCategoria: 1, nome: "" })
+        setCategoria({ nomeCategoria: "" })
     }
 
     const editarProduto = (produto) => {
@@ -69,7 +69,7 @@ const Produto = () => {
     }
 
     const excluirProduto = async (id) => {
-        const { data: produtoExcluido } = await api.delete(`/tasks/${id}`)
+        const { data: produtoExcluido } = await api.delete(`/produto/${id}`)
         const produtosFiltrados = produtos.filter(produto => produto.id !== produtoExcluido.id)
         setProdutos(produtosFiltrados);
     }
@@ -81,7 +81,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ idCategoria: 1, nome: "" })
+        setCategoria({ nomeCategoria: "" })
     }
 
     const salvar = async () => {
@@ -94,7 +94,7 @@ const Produto = () => {
             categoria: categoria
         }
 
-        const { data } = await api.put(`/tasks/${editando.id}`, produtoEditado)
+        const { data } = await api.put(`/produto/${editando.id}`, produtoEditado)
 
         const produtoseditados = produtos.map(produto => {
             if (produto.id === data.id) {
@@ -113,12 +113,12 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ idCategoria: 1, nome: "" })
+        setCategoria({ nomeCategoria: "" })
     }
 
     return (
         <div className="container">
-            <h1 className='text-center'>CADASTRO DE PRODUTOssssssS</h1>
+            <h1 className='text-center'>CADASTRO DE PRODUTOS</h1>
 
             {/* passar a função adicionar ao inves de passar props por pros??? */}
 

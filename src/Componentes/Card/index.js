@@ -26,8 +26,8 @@ const Card = ({ produto, editarProduto, excluirProduto }) => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            {/* como pega a desgraça da categoria?? */}
-                                            <td>{produto.idCategoria}{ }</td>
+                                         
+                                            <td>{produto.categoria.nomeCategoria}</td>
                                             <td>{produto.descricaoProduto}</td>
                                             <td>{produto.custo}</td>
                                             <td>{produto.precoUnitario}</td>
