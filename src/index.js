@@ -4,20 +4,15 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, Navigate }  from 'react-router-dom';
-
-
+import Home from './Pages/home';
+import User from './Pages/user';
+import Login from './Pages/login';
+import Rotas from './Routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/painel' element={<Painel />}/>
-      </Routes>
-      <App />
-    </BrowserRouter>
+    <Rotas/>
   </React.StrictMode>
 );
 
