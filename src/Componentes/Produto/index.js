@@ -14,7 +14,7 @@ const Produto = () => {
     const [categoria, setCategoria] = useState({ "nomeCategoria": "" })
     const [idCount, setIdCount] = useState(0)
     const [editando, setEditando] = useState({ edit: false, id: null })
-    const { tasks } = useAxiosGet('/produto')
+    const { tasks } = useAxiosGet('/produtos')
     const [produtos, setProdutos] = useState([])
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const Produto = () => {
 
         }
 
-        const { data } = await api.post('/produto', novoProduto)
+        const { data } = await api.post('/produtos', novoProduto)
 
         setProdutos([
             ...produtos,
@@ -68,7 +68,7 @@ const Produto = () => {
     }
 
     const excluirProduto = async (id) => {
-        const { data: produtoExcluido } = await api.delete(`/produto/${id}`)
+        const { data: produtoExcluido } = await api.delete(`/produtos/${id}`)
         const produtosFiltrados = produtos.filter(produto => produto.id !== produtoExcluido.id)
         setProdutos(produtosFiltrados);
     }
@@ -93,7 +93,7 @@ const Produto = () => {
             categoria: categoria
         }
 
-        const { data } = await api.put(`/produto/${editando.id}`, produtoEditado)
+        const { data } = await api.put(`/produtos/${editando.id}`, produtoEditado)
 
         const produtoseditados = produtos.map(produto => {
             if (produto.id === data.id) {

@@ -17,8 +17,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    {/* <Home/> */}
-    <User/>
+    <Home/>
+    {/* <User/> */}
 
     <div className="footer py-3">
       <div className="container">

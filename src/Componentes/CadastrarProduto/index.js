@@ -5,6 +5,19 @@ const CadastrarProdutos = ({ nome, setNome, custo, setCusto, preco, setPreco, de
         case 1 - return eletronicos
         case 2-return celulares
         */
+        // const listaCategorias = ({categorias}) => {
+        //     return (
+        //         <>
+        //             {data.map((item, index) => (
+        //                 <>
+        //                 <h1 key={index}>{index + 1} - {item.nomeCategoria}</h1>
+        //                 <li><a class="dropdown-item" href="#">Action</a></li>
+        //                 </>
+        //             ))}
+        //         </>
+        //     );
+        // }
+        
 
     return (
 
@@ -19,6 +32,18 @@ const CadastrarProdutos = ({ nome, setNome, custo, setCusto, preco, setPreco, de
                     <label className="form-label">Categoria</label>
                     <input type="text" className="form-control" placeholder="Ex: Celulares" value={categoria.nomeCategoria} onChange={e => setCategoria({ "nomeCategoria": e.target.value })} />
                 </div>
+
+                <div>
+                    {/* <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              { <função que gera os lis ></função>}
+                            </ul>
+                        </div> */}
+                </div>
+
                 <div className="col-md-4">
                     <label className="form-label">Descrição</label>
                     <input type="text" className="form-control" placeholder="Ex: 126GB" value={descricao} onChange={e => setDescricao(e.target.value)} />
