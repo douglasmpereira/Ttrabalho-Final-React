@@ -6,6 +6,7 @@ import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsLinkedin } from "react-icons/bs";
 import { FaStore } from "react-icons/fa";
+import { FcBusinesswoman } from "react-icons/fc";
 import Produto from "../../Componentes/Produto";
 
 const User = () => {
@@ -18,38 +19,18 @@ const User = () => {
           </Navbar.Brand>
           <Nav className="me-auto ">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link className="navlink" href="#login">
-              Sair
-            </Nav.Link>
           </Nav>
+          <label className="me-2" htmlFor="">Bem vindo(a) novamente, Nome do funcionario </label>
+          <FcBusinesswoman className="me-3" size={25}/>
+          <Nav.Link
+            className="login btn  btn-outline-primary me-3"
+            href="#login" >
+            Logout{" "}
+          </Nav.Link>
         </Navbar>
       </div>
-      <div className="container-fluid">
         <div className="body mt-4">
           <Produto />
-        </div>
-        <div className="container-fluid">
-          <div className="footer py-3 fixed-bottom">
-            <div className="row ">
-              <div className="col d-flex ms-5 t">
-                <a href="">
-                  <BsFacebook size={20} />
-                </a>
-                <a href="">
-                  <RiInstagramFill size={20} />
-                </a>
-                <a href="">
-                  <BsLinkedin size={20} />
-                </a>
-              </div>
-              <div className="rodape col d-flex justify-content-end me-5">
-                <a href="Esta com problemas? fale con">
-                  Algum problema? fale conosco!
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );

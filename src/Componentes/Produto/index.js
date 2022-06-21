@@ -118,7 +118,7 @@ const Produto = () => {
 
     return (
         <div className="container">
-            <h1 className='text-center'>CADASTRO DE PRODUTOS</h1>
+            <h1 className='titulo text-center'>GERENCIAMENTO DE PRODUTOS</h1>
 
             <CadastrarProdutos editar={editarProduto} adicionarProduto={adicionarProduto} salvar={salvar} cancelar={cancelar} nome={nomeProduto} setNome={setNomeProduto} custo={custo} setCusto={setCusto}
                 preco={precoUnitario} setPreco={setPrecoUnitario} descricao={descricaoProduto} setDescricao={setDescricaoProduto}

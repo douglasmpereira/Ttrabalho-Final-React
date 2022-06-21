@@ -1,10 +1,15 @@
 
 const CadastrarProdutos = ({ nome, setNome, custo, setCusto, preco, setPreco, descricao, setDescricao, quantidade, setQuantidade,
     categoria, setCategoria, adicionarProduto, editando, edit, cancelar, salvar }) => {
+        /* criar um state de categorias e puxar as categoria manual , mapeando manualmente o que ta na api , fazer switch p adicionar a categoria 
+        case 1 - return eletronicos
+        case 2-return celulares
+        */
 
     return (
-        <div className="container">
 
+        <div className="container">
+            <h3 className="text-center" >Insira ou edite um produto</h3>
             <form className="row g-3 mt-2">
                 <div className="col-md-4">
                     <label className="form-label">Nome</label>
@@ -46,6 +51,7 @@ const CadastrarProdutos = ({ nome, setNome, custo, setCusto, preco, setPreco, de
                 }
 
             </form>
+            <h3>Produtos cadastrados no seu sistema!</h3>
         </div>
     );
 }
