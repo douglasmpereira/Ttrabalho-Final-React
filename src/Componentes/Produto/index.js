@@ -11,11 +11,10 @@ const Produto = () => {
     const [precoUnitario, setPrecoUnitario] = useState("")
     const [descricaoProduto, setDescricaoProduto] = useState("")
     const [quantidadeEstoque, setQuantidadeEstoque] = useState("")
-    const [categoria, setCategoria] = useState([{ nomeCategoria: "" }])
-
+    const [categoria, setCategoria] = useState({ "nomeCategoria": "" })
     const [idCount, setIdCount] = useState(0)
     const [editando, setEditando] = useState({ edit: false, id: null })
-    const { tasks } = useAxiosGet('/produto')
+    const { tasks } = useAxiosGet('/produtos')
     const [produtos, setProdutos] = useState([])
 
     useEffect(() => {
@@ -27,8 +26,8 @@ const Produto = () => {
     const adicionarProduto = async () => {
         if (nomeProduto === "" || custo === "" || precoUnitario === "" ||
             descricaoProduto === "" || quantidadeEstoque === "" || categoria === null) {
-             return alert("PREENCHA TODOS OS CAMPOS")
-            }
+            return alert("PREENCHA TODOS OS CAMPOS")
+        }
 
         const novoProduto = {
 
@@ -38,11 +37,11 @@ const Produto = () => {
             precoUnitario: precoUnitario,
             descricaoProduto: descricaoProduto,
             quantidadeEstoque: quantidadeEstoque,
-            categoria: categoria.nomeCategoria
+            categoria: categoria
 
         }
 
-        const { data } = await api.post('/produto', novoProduto)
+        const { data } = await api.post('/produtos', novoProduto)
 
         setProdutos([
             ...produtos,
@@ -55,7 +54,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ nomeCategoria: "" })
+        setCategoria({ "nomeCategoria": "" })
     }
 
     const editarProduto = (produto) => {
@@ -69,7 +68,7 @@ const Produto = () => {
     }
 
     const excluirProduto = async (id) => {
-        const { data: produtoExcluido } = await api.delete(`/produto/${id}`)
+        const { data: produtoExcluido } = await api.delete(`/produtos/${id}`)
         const produtosFiltrados = produtos.filter(produto => produto.id !== produtoExcluido.id)
         setProdutos(produtosFiltrados);
     }
@@ -81,7 +80,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ nomeCategoria: "" })
+        setCategoria({ "nomeCategoria": "" })
     }
 
     const salvar = async () => {
@@ -94,7 +93,7 @@ const Produto = () => {
             categoria: categoria
         }
 
-        const { data } = await api.put(`/produto/${editando.id}`, produtoEditado)
+        const { data } = await api.put(`/produtos/${editando.id}`, produtoEditado)
 
         const produtoseditados = produtos.map(produto => {
             if (produto.id === data.id) {
@@ -113,19 +112,17 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ nomeCategoria: "" })
+        setCategoria({ "nomeCategoria": "" })
+
     }
 
     return (
         <div className="container">
-            <h1 className='text-center'>CADASTRO DE PRODUTOS</h1>
-
-            {/* passar a função adicionar ao inves de passar props por pros??? */}
+            <h1 className='titulo text-center'>GERENCIAMENTO DE PRODUTOS</h1>
 
             <CadastrarProdutos editar={editarProduto} adicionarProduto={adicionarProduto} salvar={salvar} cancelar={cancelar} nome={nomeProduto} setNome={setNomeProduto} custo={custo} setCusto={setCusto}
                 preco={precoUnitario} setPreco={setPrecoUnitario} descricao={descricaoProduto} setDescricao={setDescricaoProduto}
-                quantidade={quantidadeEstoque} setQuantidade={setQuantidadeEstoque} categoria={categoria} setCategoria={setCategoria} />
-
+                quantidade={quantidadeEstoque} setQuantidade={setQuantidadeEstoque} categoria={categoria} setCategoria={setCategoria} editando={editando} />
 
             {produtos.map((produto) => <Card key={produto.id} produto={produto} editarProduto={editarProduto} excluirProduto={excluirProduto} />)}
         </div>
