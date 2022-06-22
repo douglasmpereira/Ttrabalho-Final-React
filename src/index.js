@@ -5,10 +5,12 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Pages/home';
 import User from './Pages/user';
+import Login from './Pages/login';
 import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsLinkedin } from "react-icons/bs";
 import { FaExclamationTriangle } from "react-icons/fa"; 
+import Rotas from './Routes';
 
 
 
@@ -18,7 +20,9 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Home/> */}
-    <User/>
+    {/* <Login/> */}
+    {/* <User/> */}
+    <Rotas/>
 
     <div className="footer py-3">
       <div className="container">

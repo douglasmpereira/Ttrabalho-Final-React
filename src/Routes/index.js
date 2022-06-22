@@ -34,7 +34,7 @@ const Rotas =({handleLogin})=> {
                 {usuario && <Route path='/user' element={<User />}/>}
                 <Route path='*' element={usuario ? <User/> : <Navigate to= '/login' />} />
             </Routes>
-        </BrowserRouter>
+        </BrowserRouter>    
     )
 }
 
