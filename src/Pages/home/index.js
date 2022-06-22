@@ -7,22 +7,23 @@ import { RiInstagramFill } from "react-icons/ri";
 import { BsLinkedin } from "react-icons/bs";
 import { FaStore } from "react-icons/fa";
 
+
 const Home = () => {
   return (
     <>
       <div className="header">
         <Navbar className="navbar ms-3">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             <FaStore className="iconeloja" size={35} />
           </Navbar.Brand>
           <Nav className="me-auto ">
-            <Nav.Link className="home" href="#home">
+            <Nav.Link className="home " href="/home">
               Home
             </Nav.Link>
           </Nav>
           <Nav.Link
-            className="login btn  btn-outline-primary me-3"
-            href="#login" >
+            className="login"
+            href="/login" >
             Login{" "}
           </Nav.Link>
         </Navbar>

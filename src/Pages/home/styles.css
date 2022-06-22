@@ -1,4 +1,23 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .photo{
+    border-radius: 5x;
+  }
 
+  .photo:hover{
+        border-radius: 5x;
+        box-shadow: 0 0 1em rgb(0, 0, 0);  }
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
 .header{
     background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(85, 202, 221, 1) 0%, rgba(31, 138, 182, 1) 28%, rgba(11, 150, 186, 1) 60%, rgba(55, 86, 175, 1) 89%);
     
@@ -9,11 +28,32 @@
 
 .iconeloja{
     color: lightcyan;
+    
 }
 .iconeloja:hover{
-    color: black
+    color: black;
+    
+    
+}
+.home{
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.459);
+    color: lightcyan;
+    border-color: lightcyan;
+    font-weight: 200;
+    line-height: 0.8;
+}
+
+.home:hover{
+    color: black;
+    background-color: lightcyan; 
+    border: black; 
+    
 }
 .login{
+    margin-right: 1%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.459);
     color: lightcyan;
     border-color: lightcyan;
     font-weight: 200;

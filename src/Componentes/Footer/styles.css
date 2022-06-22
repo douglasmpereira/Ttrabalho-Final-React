@@ -1,0 +1,30 @@
+
+  
+  @media (m-width: 320px){
+    .teste{
+      font-size: 10px;
+      
+      
+    }
+  }
+  .footer{
+    background: radial-gradient(circle, rgba(2, 0, 36, 0.1) 0%, rgba(85, 202, 221, 10) 0%, rgba(31, 138, 182, 1) 28%, rgba(11, 150, 186, 1) 60%, rgba(55, 86, 175, 1) 89%);
+    color: black;
+     align-items: center;
+      position: fixed;
+      height: 50px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin-bottom: 0px;
+    }
+   
+  
+  .ancora{
+    color: lightcyan;
+  }
+  .ancora:hover{
+    color: black;
+  }
+  
+  
