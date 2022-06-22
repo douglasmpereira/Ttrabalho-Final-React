@@ -11,8 +11,8 @@ const Produto = () => {
     const [precoUnitario, setPrecoUnitario] = useState("")
     const [descricaoProduto, setDescricaoProduto] = useState("")
     const [quantidadeEstoque, setQuantidadeEstoque] = useState("")
-    const [categoria, setCategoria] = useState({ "nomeCategoria": "" })
-    const [idCount, setIdCount] = useState(0)
+    const [categoria, setCategoria] = useState({ "idCategoria": 1 })
+    const [idProduto, setIdProduto] = useState(0)
     const [editando, setEditando] = useState({ edit: false, id: null })
     const { tasks } = useAxiosGet('/produtos')
     const [produtos, setProdutos] = useState([])
@@ -20,7 +20,7 @@ const Produto = () => {
     useEffect(() => {
         if (!tasks) return
         setProdutos(tasks)
-        setIdCount(tasks.length)
+       // setIdProduto(tasks.length)
     }, [tasks])
 
     const adicionarProduto = async () => {
@@ -31,7 +31,6 @@ const Produto = () => {
 
         const novoProduto = {
 
-            id: idCount + 1,
             nomeProduto: nomeProduto,
             custo: custo,
             precoUnitario: precoUnitario,
@@ -40,25 +39,25 @@ const Produto = () => {
             categoria: categoria
 
         }
-
-        const { data } = await api.post('/produtos', novoProduto)
+        console.log(novoProduto)
+        const { data } = await api.post('/produtos/adicionar', novoProduto)
 
         setProdutos([
             ...produtos,
             data
         ])
 
-        setIdCount(idCount + 1)
+        setIdProduto("")
         setNomeProduto("")
         setCusto("")
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ "nomeCategoria": "" })
+        setCategoria({"idCategoria": 1  })
     }
 
     const editarProduto = (produto) => {
-        setEditando({ edit: true, id: produto.id })
+        setEditando({ edit: true, idProduto: produto.idProduto })
         setNomeProduto(produto.nomeProduto)
         setCusto(produto.custo)
         setPrecoUnitario(produto.precoUnitario)
@@ -66,21 +65,22 @@ const Produto = () => {
         setQuantidadeEstoque(produto.quantidadeEstoque)
         setCategoria(produto.categoria)
     }
-
-    const excluirProduto = async (id) => {
-        const { data: produtoExcluido } = await api.delete(`/produtos/${id}`)
-        const produtosFiltrados = produtos.filter(produto => produto.id !== produtoExcluido.id)
+    
+    const excluirProduto = async (idProduto) => {
+        const produtosFiltrados = produtos.filter(produto => produto.idProduto !== idProduto)
         setProdutos(produtosFiltrados);
+        const { data: produtoExcluido } = await api.delete(`/produtos/${idProduto}`)
+        console.log("problema de back end, culpa do pessoal que fez a api")
     }
 
     const cancelar = () => {
-        setEditando({ edit: false, id: null })
+        setEditando({ edit: false, idProduto: null })
         setNomeProduto("")
         setCusto("")
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ "nomeCategoria": "" })
+        setCategoria({ "idCategoria": 1  })
     }
 
     const salvar = async () => {
@@ -93,26 +93,30 @@ const Produto = () => {
             categoria: categoria
         }
 
-        const { data } = await api.put(`/produtos/${editando.id}`, produtoEditado)
-
+        const { data } = await api.put(`/produtos/${editando.idProduto}`, produtoEditado)
+        console.log(data)
+        console.log(idProduto)
         const produtoseditados = produtos.map(produto => {
-            if (produto.id === data.id) {
+            if (produto.idProduto === data.idProduto) {
+                console.log("dentro do if")
+                
                 return {
-                    id: produto.id,
+                    idProduto: produto.idProduto,
                     ...produtoEditado
                 }
             }
             return produto
         })
-
+        
+        console.log("depois de produtos editads")
         setProdutos(produtoseditados)
-        setEditando({ edit: false, id: null })
+        setEditando({ edit: false, idProduto: null })
         setNomeProduto("")
         setCusto("")
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ "nomeCategoria": "" })
+        setCategoria({ "idCategoria": 1  })
 
     }
 
@@ -124,7 +128,7 @@ const Produto = () => {
                 preco={precoUnitario} setPreco={setPrecoUnitario} descricao={descricaoProduto} setDescricao={setDescricaoProduto}
                 quantidade={quantidadeEstoque} setQuantidade={setQuantidadeEstoque} categoria={categoria} setCategoria={setCategoria} editando={editando} />
 
-            {produtos.map((produto) => <Card key={produto.id} produto={produto} editarProduto={editarProduto} excluirProduto={excluirProduto} />)}
+            {produtos.map((produto) => <Card key={produto.idProduto} produto={produto} editarProduto={editarProduto} excluirProduto={excluirProduto} />)}
         </div>
     );
 }

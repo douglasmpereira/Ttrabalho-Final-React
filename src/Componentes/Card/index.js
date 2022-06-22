@@ -1,6 +1,8 @@
 const Card = ({ produto, editarProduto, excluirProduto }) => {
 
+    
     return (
+        
         <div className="container">
 
             <div className="card col-12 mb-2 mt-4" >
@@ -9,7 +11,7 @@ const Card = ({ produto, editarProduto, excluirProduto }) => {
                     <div className="card col-12 mb-2 ">
                         <div className="card-header d-flex align-items-center mt-2">
 
-                            <p>{produto.id} - {produto.nomeProduto}</p>
+                            <p>{produto.idProduto} - {produto.nomeProduto}</p>
                         </div>
 
                         <div className="card-body">
@@ -26,7 +28,6 @@ const Card = ({ produto, editarProduto, excluirProduto }) => {
                                     </thead>
                                     <tbody>
                                         <tr>
-
                                             <td>{produto.categoria.nomeCategoria}</td>
                                             <td>{produto.descricaoProduto}</td>
                                             <td>{produto.custo}</td>
@@ -41,7 +42,7 @@ const Card = ({ produto, editarProduto, excluirProduto }) => {
                                 <button className="btn btn-sm btn-primary" onClick={() => editarProduto(produto)}>
                                     <div className='d-flex align-items-center'>Editar</div>
                                 </button>
-                                <button className="btn btn-sm btn-danger ms-1" onClick={() => excluirProduto(produto.id)}>
+                                <button className="btn btn-sm btn-danger ms-1" onClick={() => excluirProduto(produto.idProduto)}>
                                     <div className='d-flex align-items-center'>Excluir</div>
                                 </button>
                             </div>
