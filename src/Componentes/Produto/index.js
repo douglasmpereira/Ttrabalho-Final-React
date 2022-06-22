@@ -39,7 +39,6 @@ const Produto = () => {
             categoria: categoria
 
         }
-        console.log(novoProduto)
         const { data } = await api.post('/produtos/adicionar', novoProduto)
 
         setProdutos([
@@ -69,8 +68,8 @@ const Produto = () => {
     const excluirProduto = async (idProduto) => {
         const produtosFiltrados = produtos.filter(produto => produto.idProduto !== idProduto)
         setProdutos(produtosFiltrados);
-        const { data: produtoExcluido } = await api.delete(`/produtos/${idProduto}`)
         console.log("problema de back end, culpa do pessoal que fez a api")
+        const { data: produtoExcluido } = await api.delete(`/produtos/${idProduto}`)
     }
 
     const cancelar = () => {
@@ -94,11 +93,10 @@ const Produto = () => {
         }
 
         const { data } = await api.put(`/produtos/${editando.idProduto}`, produtoEditado)
-        console.log(data)
-        console.log(idProduto)
+        //console.log( editando.idProduto)
         const produtoseditados = produtos.map(produto => {
-            if (produto.idProduto === data.idProduto) {
-                console.log("dentro do if")
+            console.log(produto.idProduto, data.idProduto)
+            if (produto.idProduto === editando.idProduto) {
                 
                 return {
                     idProduto: produto.idProduto,
