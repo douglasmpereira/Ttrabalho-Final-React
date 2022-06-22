@@ -1,6 +1,5 @@
 import Navbar from "react-bootstrap/Navbar";
 import { Nav } from "react-bootstrap";
-import Container from "react-bootstrap/esm/Container";
 import "./styles.css";
 import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";

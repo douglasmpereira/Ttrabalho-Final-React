@@ -1,5 +1,24 @@
 const Card = ({ produto, editarProduto, excluirProduto }) => {
 
+
+    const handleCategoria = () => {
+        
+        switch(produto.categoria.idCategoria){
+            
+            case 1:
+                return <>Celular</>
+            case 2:
+                return <>Tablet</>
+            case 3:
+                return <>Monitor</>
+                case 4:
+                return <>Mouse</>
+                case 5:
+                return <>Teclado</>
+            default:
+                return 'Sem Categoria'
+        }
+    }
     
     return (
         
@@ -19,20 +38,20 @@ const Card = ({ produto, editarProduto, excluirProduto }) => {
                                 <table className="table">
                                     <thead>
                                         <tr>
-                                            <th>Categoria</th>
-                                            <th>Descrição</th>
-                                            <th>Custo</th>
-                                            <th>Preço Unitário</th>
-                                            <th>Quantidade</th>
+                                            <th className="text-center">Categoria</th>
+                                            <th className="text-center">Descrição</th>
+                                            <th className="text-center">Custo</th>
+                                            <th className="text-center">Preço</th>
+                                            <th className="text-center">Quantidade</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{produto.categoria.nomeCategoria}</td>
-                                            <td>{produto.descricaoProduto}</td>
-                                            <td>{produto.custo}</td>
-                                            <td>{produto.precoUnitario}</td>
-                                            <td>{produto.quantidadeEstoque}</td>
+                                            <td className="text-center" >{handleCategoria()}</td>
+                                            <td className="text-center">{produto.descricaoProduto}</td>
+                                            <td className="text-center">{produto.custo}</td>
+                                            <td className="text-center">{produto.precoUnitario}</td>
+                                            <td className="text-center">{produto.quantidadeEstoque}</td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -5,9 +5,9 @@ import Home from "../Pages/home";
 import Login from "../Pages/login";
 //import ProtectedRoutes from "../ProtectedRoutes";
 
-const Rotas =({handleLogin})=> {
-    const [usuario, setUsuario] = useState(true)
-    console.log("Rotas")
+const Rotas =()=> {
+    const [usuario, setUsuario] = useState(false)
+    
 
     // try {
     //     useEffect(() => {
@@ -29,6 +29,7 @@ const Rotas =({handleLogin})=> {
     return(
         <BrowserRouter>
             <Routes>
+                <Route path='/' element={<Home />}/>
                 <Route path='/home' element={<Home />}/>
                 <Route path='/login' element={<Login />}/>
                 {usuario && <Route path='/user' element={<User />}/>}

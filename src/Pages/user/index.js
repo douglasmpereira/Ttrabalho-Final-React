@@ -14,17 +14,17 @@ const User = () => {
     <>
       <div className="header">
         <Navbar className="navbar ms-3">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             <FaStore className="iconeloja" size={30} />
           </Navbar.Brand>
           <Nav className="me-auto ">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
           </Nav>
           <label className="me-2" htmlFor="">Bem vindo(a) novamente, Nome do funcionario </label>
           <FcBusinesswoman className="me-3" size={25}/>
           <Nav.Link
             className="login btn  btn-outline-primary me-3"
-            href="#login" >
+            href="/login" >
             Logout{" "}
           </Nav.Link>
         </Navbar>

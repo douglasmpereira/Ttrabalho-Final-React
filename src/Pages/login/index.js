@@ -27,7 +27,7 @@ const Login = () => {
       localStorage.setItem("login", login);
       localStorage.setItem("senha", senha);
       // alert("Usuário validado")
-      navigate("/login");
+      navigate("/user");
     } else {
       alert("Usuário ou senha inválido! Tente novamente.");
     }

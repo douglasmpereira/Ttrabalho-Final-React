@@ -11,7 +11,7 @@ const Produto = () => {
     const [precoUnitario, setPrecoUnitario] = useState("")
     const [descricaoProduto, setDescricaoProduto] = useState("")
     const [quantidadeEstoque, setQuantidadeEstoque] = useState("")
-    const [categoria, setCategoria] = useState({ "idCategoria": 1 })
+    const [categoria, setCategoria] = useState({ "idCategoria": 0 })
     const [idProduto, setIdProduto] = useState(0)
     const [editando, setEditando] = useState({ edit: false, id: null })
     const { tasks } = useAxiosGet('/produtos')
@@ -52,7 +52,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({"idCategoria": 1  })
+        setCategoria({"idCategoria": 0  })
     }
 
     const editarProduto = (produto) => {
@@ -79,7 +79,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ "idCategoria": 1  })
+        setCategoria({ "idCategoria": 0  })
     }
 
     const salvar = async () => {
@@ -114,7 +114,7 @@ const Produto = () => {
         setPrecoUnitario("")
         setDescricaoProduto("")
         setQuantidadeEstoque("")
-        setCategoria({ "idCategoria": 1  })
+        setCategoria({ "idCategoria": 0  })
 
     }
 
