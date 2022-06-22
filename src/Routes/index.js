@@ -6,7 +6,11 @@ import Login from "../Pages/login";
 //import ProtectedRoutes from "../ProtectedRoutes";
 
 const Rotas =()=> {
+<<<<<<< HEAD
     const [usuario, setUsuario] = useState()
+=======
+    const [usuario, setUsuario] = useState(true)
+>>>>>>> 58754f090dbf30c692cdb24bc59b5bb176c639f0
     
 
     // try {
