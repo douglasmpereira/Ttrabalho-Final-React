@@ -8,7 +8,7 @@ import User from './Pages/user';
 import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsLinkedin } from "react-icons/bs";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { FaExclamationTriangle } from "react-icons/fa"; 
 
 
 
