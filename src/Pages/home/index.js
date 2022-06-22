@@ -1,9 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import { Nav } from "react-bootstrap";
 import "./styles.css";
-import { BsFacebook } from "react-icons/bs";
-import { RiInstagramFill } from "react-icons/ri";
-import { BsLinkedin } from "react-icons/bs";
 import { FaStore } from "react-icons/fa";
 
 const Home = () => {
@@ -32,14 +29,14 @@ const Home = () => {
             <div className="col-md-6">
               <img
                 className="photo"
-                src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/3242_C9BAF28E8A349AB0-2.jpg?w=876&h=484&crop=1"
+                src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-planilhas_114360-736.jpg?w=740&t=st=1655921279~exp=1655921879~hmac=7fdc784fc4a39a4f152f87c7146af11df44c4743cdda3ebfecdc5deb7ad51985"
                 alt="img"
                 width="100%"
                 height="100%"
               />
             </div>
             <div className="col-md-6 text-center mt-3">
-              <p>
+              <p> <br />
                 <h4>ADM MARKET SYSTEM-AMS </h4  ><br /> Sistemas de gerenciamento
                 administrativo AMS te proporciona a melhor experiência em
                 gerenciamento do seu negócio. <br />

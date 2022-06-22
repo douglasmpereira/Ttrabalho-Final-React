@@ -20,7 +20,6 @@ const CadastrarProdutos = ({
 }) => {
   return (
     <div className="container">
-      <h3 className="text-center">Insira ou edite um produto</h3>
       <form className="row g-3 mt-2">
         <div className="col-md-4">
           <label className="form-label">Nome</label>
@@ -115,7 +114,7 @@ const CadastrarProdutos = ({
           </div>
         )}
       </form>
-      <h3>Produtos cadastrados no seu sistema!</h3>
+      <h4 className="subtitulo2">Produtos cadastrados no seu sistema!</h4>
     </div>
   );
 };

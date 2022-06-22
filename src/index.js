@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
-import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './Pages/home';
-import User from './Pages/user';
-import Login from './Pages/login';
 import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsLinkedin } from "react-icons/bs";

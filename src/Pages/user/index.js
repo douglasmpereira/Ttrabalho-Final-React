@@ -1,10 +1,5 @@
 import Navbar from "react-bootstrap/Navbar";
 import { Nav } from "react-bootstrap";
-import Container from "react-bootstrap/esm/Container";
-import "./styles.css";
-import { BsFacebook } from "react-icons/bs";
-import { RiInstagramFill } from "react-icons/ri";
-import { BsLinkedin } from "react-icons/bs";
 import { FaStore } from "react-icons/fa";
 import { FcBusinesswoman } from "react-icons/fc";
 import Produto from "../../Componentes/Produto";
@@ -27,7 +22,7 @@ const User = () => {
           <Nav className="me-auto ">
             <Nav.Link href="/home">Home</Nav.Link>
           </Nav>
-          <label className="me-2" htmlFor="">Bem vindo(a) novamente, Nome do funcionario </label>
+          <label className="bem-vindo me-2" htmlFor="">Bem vindo(a) novamente, Mariazinha </label>
           <FcBusinesswoman className="me-3" size={25}/>
           <Nav.Link
             className="login btn  btn-outline-primary me-3"

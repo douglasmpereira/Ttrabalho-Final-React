@@ -1,11 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import { Nav } from "react-bootstrap";
-import Container from "react-bootstrap/esm/Container";
-import "./styles.css";
 import "./login.css";
-import { BsFacebook } from "react-icons/bs";
-import { RiInstagramFill } from "react-icons/ri";
-import { BsLinkedin } from "react-icons/bs";
 import { FaStore } from "react-icons/fa";
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -59,15 +54,15 @@ const Login = () => {
             <div className="col-md-6">
               <img
                 className="photo"
-                src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/3242_C9BAF28E8A349AB0-2.jpg?w=876&h=484&crop=1"
-                alt="img"
+                src="https://img.freepik.com/vetores-gratis/homem-sentado-na-mesa-e-desbloqueando-o-computador-configuracoes-do-computador-ilustracao-plana-de-login_74855-20645.jpg?w=740&t=st=1655922614~exp=1655923214~hmac=332ad3fdaba597d16166dd6400fd0b6d4365e859cffd6d42ba32af5be5bdc14a"
+                alt="homen acessando o computador"
                 width="100%"
                 height="100%"
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 ">
               <h3 className="text-center">Acesso do funcionário!</h3>
-              <div className="btlogin">
+              <div className="btlogin" >
                 <div className="Auth-form-container">
                   <form className="Auth-form">
                     <div className="Auth-form-content">
@@ -76,7 +71,7 @@ const Login = () => {
                         <label>Login</label>
                         <input
                           type="text"
-                          placeholder="Entre com o seu Id de usuario"
+                          placeholder="Entre com o seu Id"
                           value={login}
                           onChange={(e) => setLogin(e.target.value)}
                         />
@@ -91,10 +86,10 @@ const Login = () => {
                         />
                       </div>
                       <p>
-                        <a className="ancoralog" href="#">Esqueci minha senha</a>
+                        <a className="ancoralog" href="#esquecisenha">Esqueci minha senha</a>
                       </p>
                       <p>
-                        <a className="ancoralog" href="../Cadastro">Ainda não tem cadastro?</a>
+                        <a className="ancoralog" href="#cadastrar">Ainda não tem cadastro?</a>
                       </p>
                       <div className="d-grid gap-2 mt-3">
                         <button
