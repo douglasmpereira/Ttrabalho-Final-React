@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <div className="header">
         <Navbar className="navbar ms-3">
-          <Navbar.Brand href='/home'>
+          <Navbar.Brand href="/home">
             <FaStore className="iconeloja" size={35} />
           </Navbar.Brand>
           <Nav className="me-auto ">
@@ -18,7 +18,8 @@ const Home = () => {
           </Nav>
           <Nav.Link
             className="login btn  btn-outline-primary me-3"
-            href="/login" >
+            href="/login"
+          >
             Login{" "}
           </Nav.Link>
         </Navbar>
@@ -36,12 +37,16 @@ const Home = () => {
               />
             </div>
             <div className="col-md-6 text-center mt-3">
-              <p> <br />
-                <h4>ADM MARKET SYSTEM-AMS </h4  ><br /> Sistemas de gerenciamento
-                administrativo AMS te proporciona a melhor experiência em
-                gerenciamento do seu negócio. <br />
-                Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis.
-                Todo mundo vê os porris que eu tomo litro abertis de cachacis.
+              <p>
+                {" "}
+                <br />
+                <h4>ADM MARKET SYSTEM-AMS </h4>
+                <br /> Sistemas de gerenciamento administrativo AMS te
+                proporciona a melhor experiência em gerenciamento do seu
+                negócio. <br />
+                Mussum Ipsum, cacilds vidis litro abertis. Per aumento de
+                cachacis, eu reclamis. Todo mundo vê os porris que eu tomo litro
+                abertis de cachacis.
               </p>
             </div>
           </div>

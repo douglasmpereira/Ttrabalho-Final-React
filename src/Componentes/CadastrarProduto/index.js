@@ -39,8 +39,8 @@ const CadastrarProdutos = ({
               value={categoria.idCategoria}
               onChange={(e) => setCategoria({ idCategoria: e.target.value })}>
               <option className = "boxselect" value="0" disabled selected>Insira uma Categoria</option>
-              <option value="1">Celulares</option>
-              <option value="2">Tabletes</option>
+              <option value="1">Smartphones</option>
+              <option value="2">Tablets</option>
               <option value="3">Monitores</option>
               <option value="4">Mouses</option>
               <option value="5">Teclados</option>
@@ -62,7 +62,7 @@ const CadastrarProdutos = ({
           <input
             type="number"
             className="form-control"
-            placeholder="Ex: 3000"
+            placeholder="Ex: R$ 3000"
             value={custo}
             onChange={(e) => setCusto(e.target.value)}
           />
@@ -72,7 +72,7 @@ const CadastrarProdutos = ({
           <input
             type="number"
             className="form-control"
-            placeholder="Ex: 6000"
+            placeholder="Ex: R$ 6000"
             value={preco}
             onChange={(e) => setPreco(e.target.value)}
           />

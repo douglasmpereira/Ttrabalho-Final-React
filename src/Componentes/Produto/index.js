@@ -39,6 +39,7 @@ const Produto = () => {
             categoria: categoria
 
         }
+        alert("PRODUTO CADASTRADO COM SUCESSO!")
         const { data } = await api.post('/produtos/adicionar', novoProduto)
 
         setProdutos([
@@ -68,6 +69,7 @@ const Produto = () => {
     const excluirProduto = async (idProduto) => {
         const produtosFiltrados = produtos.filter(produto => produto.idProduto !== idProduto)
         setProdutos(produtosFiltrados);
+        alert("PRODUTO EXCLUÍDO COM SUCESSO!")
         console.log("problema de back end, culpa do pessoal que fez a api")
         const { data: produtoExcluido } = await api.delete(`/produtos/${idProduto}`)
     }

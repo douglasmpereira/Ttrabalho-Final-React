@@ -3,14 +3,14 @@ import { Nav } from "react-bootstrap";
 import { FaStore } from "react-icons/fa";
 import { FcBusinesswoman } from "react-icons/fc";
 import Produto from "../../Componentes/Produto";
-
-
-
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../contexts/auth";
 
 const User = () => {
-
-    
-
+  const { usuario } = useContext(AuthContext);
+  useEffect(() => {
+    console.log(usuario);
+  }, [usuario]);
 
   return (
     <>
@@ -22,17 +22,20 @@ const User = () => {
           <Nav className="me-auto ">
             <Nav.Link href="/home">Home</Nav.Link>
           </Nav>
-          <label className="bem-vindo me-2" htmlFor="">Bem vindo(a) novamente, Mariazinha </label>
-          <FcBusinesswoman className="me-3" size={25}/>
+          <label className="bem-vindo me-2" htmlFor="">
+            Bem vindo(a) novamente, {usuario.nome}
+          </label>
+          <FcBusinesswoman className="me-3" size={25} />
           <Nav.Link
             className="login btn  btn-outline-primary me-3"
-            href="/login" >
+            href="/login"
+          >
             Logout{" "}
           </Nav.Link>
         </Navbar>
       </div>
-        <div className="body mt-4">
-          <Produto />
+      <div className="body mt-4">
+        <Produto />
       </div>
     </>
   );

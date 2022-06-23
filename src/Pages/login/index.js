@@ -2,8 +2,9 @@ import Navbar from "react-bootstrap/Navbar";
 import { Nav } from "react-bootstrap";
 import "./login.css";
 import { FaStore } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
+import { AuthContext } from "../../contexts/auth";
 
 const user = {
   login: "Aluno",
@@ -11,12 +12,16 @@ const user = {
 };
 
 const Login = () => {
+  const { authenticated, logar } = useContext(AuthContext);
+
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
   const navigate = useNavigate();
 
   const handleEmail = (e) => {
     e.preventDefault();
+    console.log("submite", { login, senha });
+    logar(login, senha);
 
     if (login === user.login && senha === user.senha) {
       localStorage.setItem("login", login);
@@ -62,7 +67,7 @@ const Login = () => {
             </div>
             <div className="col-md-6 ">
               <h3 className="text-center">Acesso do funcionário!</h3>
-              <div className="btlogin" >
+              <div className="btlogin">
                 <div className="Auth-form-container">
                   <form className="Auth-form">
                     <div className="Auth-form-content">
@@ -86,10 +91,14 @@ const Login = () => {
                         />
                       </div>
                       <p>
-                        <a className="ancoralog" href="#esquecisenha">Esqueci minha senha</a>
+                        <a className="ancoralog" href="#esquecisenha">
+                          Esqueci minha senha
+                        </a>
                       </p>
                       <p>
-                        <a className="ancoralog" href="#cadastrar">Ainda não tem cadastro?</a>
+                        <a className="ancoralog" href="#cadastrar">
+                          Ainda não tem cadastro?
+                        </a>
                       </p>
                       <div className="d-grid gap-2 mt-3">
                         <button
