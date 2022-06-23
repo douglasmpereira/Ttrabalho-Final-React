@@ -4,7 +4,7 @@ import User from "../Pages/user";
 import Home from "../Pages/home";
 import Login from "../Pages/login";
 import { AuthContext } from "../../src/contexts/auth";
-//import ProtectedRoutes from "../ProtectedRoutes";
+
 
 const Rotas = () => {
   const [usuario, setUsuario] = useState(null);
@@ -21,16 +21,16 @@ const Rotas = () => {
   return (
     <BrowserRouter>
       <AuthContext.Provider
-        value={{ authenticated: !!usuario, usuario, logar, logout }}
+        value={{ authenticated: 
+        !!usuario, usuario, logar, logout }}
       >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           {usuario && <Route path="/user" element={<User />} />}
-          <Route
-            path="*"
-            element={usuario ? <User /> : <Navigate to="/login" />}
+          <Route path="*" 
+          element={usuario ? <User /> : <Navigate to="/login" />}
           />
         </Routes>
       </AuthContext.Provider>

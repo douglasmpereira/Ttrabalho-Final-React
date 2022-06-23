@@ -12,7 +12,7 @@ const user = {
 };
 
 const Login = () => {
-  const { authenticated, logar } = useContext(AuthContext);
+  const { logar } = useContext(AuthContext);
 
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
@@ -20,13 +20,11 @@ const Login = () => {
 
   const handleEmail = (e) => {
     e.preventDefault();
-    console.log("submite", { login, senha });
     logar(login, senha);
 
     if (login === user.login && senha === user.senha) {
       localStorage.setItem("login", login);
       localStorage.setItem("senha", senha);
-      // alert("Usuário validado")
       navigate("/user");
     } else {
       alert("Usuário ou senha inválido! Tente novamente.");
@@ -62,7 +60,7 @@ const Login = () => {
                 src="https://img.freepik.com/vetores-gratis/homem-sentado-na-mesa-e-desbloqueando-o-computador-configuracoes-do-computador-ilustracao-plana-de-login_74855-20645.jpg?w=740&t=st=1655922614~exp=1655923214~hmac=332ad3fdaba597d16166dd6400fd0b6d4365e859cffd6d42ba32af5be5bdc14a"
                 alt="homen acessando o computador"
                 width="100%"
-                height="100%"
+                height="96%"
               />
             </div>
             <div className="col-md-6 ">
