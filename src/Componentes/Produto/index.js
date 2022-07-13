@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import api from '../service/api';
+import api from "../../service/api"
 import useAxiosGet from '../hooks/useAxiosGet';
 import CadastrarProdutos from '../CadastrarProduto';
 import Card from '../Card';

@@ -11,7 +11,7 @@ const Rotas = () => {
 
   const logar = (login, senha) => {
     console.log("login auth", { login, senha });
-    setUsuario({ nome: "Mariazinha Silveira da Silva", senha });
+    setUsuario({ nome: "Thatto", senha });
   };
 
   const logout = () => {
